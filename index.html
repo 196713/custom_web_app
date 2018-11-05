@@ -19,6 +19,10 @@
 			t =  new Date();
 			h = t.getHours();
 			m = t.getMinutes();
+			if (m < 10)
+			{
+				m = "0" + t.getMinutes();
+			}
 			if (h >= 12)
 			{
 				h -= 12;
