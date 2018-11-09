@@ -11,27 +11,35 @@
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet">
 		<title>Time</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	</head>
 	<body>
-
-		<p id="time"></p>
+		<div>
+			<p class="center"><i class="far fa-clock fa-5x"></i></p>
+			<p class="text" id="time"></p>
+		</div>
 		<script>
-			t =  new Date();
-			h = t.getHours();
-			m = t.getMinutes();
-			if (m < 10)
-			{
-				m = "0" + t.getMinutes();
+			function updateClock() {
+				t =  new Date();
+				h = t.getHours();
+				m = t.getMinutes();
+				if (m < 10)
+				{
+					m = "0" + t.getMinutes();
+				}
+				if (h >= 12)
+				{
+					h -= 12;
+					document.getElementById("time").innerHTML = h + ":" + m + " PM";
+				}
+				else
+				{
+					document.getElementById("time").innerHTML = h + ":" + m + " AM";
+				}
+
+				setTimeout(updateClock, 1000);
 			}
-			if (h >= 12)
-			{
-				h -= 12;
-				document.getElementById("time").innerHTML = h + ":" + m + " PM";
-			}
-			else
-			{
-				document.getElementById("time").innerHTML = h + ":" + m + " AM";
-			}
+			updateClock();
 		</script>
 
 	</body>

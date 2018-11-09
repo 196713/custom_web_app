@@ -2,13 +2,21 @@ html, body{
 	height:100%;
 }
 body{
-	display:flex;
-	background:#000000;
+	background:#F1F1F2;
 }
-p{
-	margin:auto;
+div{
+	padding-top:100px;
+}
+.text{
 	text-align:center;
+	margin:auto;
 	font-family: 'Krub', sans-serif;
 	font-size:4em;
-	color:#FFFFFF;
+	color:#222222;
+}
+i{
+	color:#222222;
+}
+.center{
+	text-align:center;
 }
